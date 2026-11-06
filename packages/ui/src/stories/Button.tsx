@@ -3,33 +3,43 @@ import React from 'react';
 import './button.css';
 
 export interface ButtonProps {
-  /** Is this the principal call to action on the page? */
-  primary?: boolean;
-  /** What background color to use */
-  backgroundColor?: string;
-  /** How large should the button be? */
-  size?: 'small' | 'medium' | 'large';
-  /** Button contents */
+  /** Тип кнопки */
+  kind: "primary" | "outlined" | "danger";
+  /** Иконка кнопки*/
+  icon?: React.ReactElement;
+  /** Размер кнопки*/
+  size?: 'default' | 'large';
+  /** Текст кнопки */
   label: string;
-  /** Optional click handler */
+  /** Обработчик кликов */
   onClick?: () => void;
+  /** CSS-стили */
+  style?: React.CSSProperties;
+  /** Состояние */
+  disabled?: boolean
 }
 
-/** Primary UI component for user interaction */
+/** Основной UI-компонент для пользовательских взаимодействий */
 export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
+  kind,
+  icon,
+  size = 'default',
   label,
-  ...props
+  disabled = false,
+  style = {}
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const mode = kind === "primary"
+    ? 'storybook-button--primary'
+    : kind === "outlined" 
+      ? 'storybook-button--outlined' 
+      : 'storybook-button--danger';
+
   return (
     <button
       type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
+      style={style}
+      disabled={disabled}
     >
       {label}
     </button>
