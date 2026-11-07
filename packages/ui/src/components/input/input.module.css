@@ -1,0 +1,21 @@
+.input {
+    box-sizing: border-box;
+    padding: 12px 24px;
+    font-family: 'Lora', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 8px;
+    width: 100%;
+    color: #333;
+    border: 1px solid #aaa;
+}
+
+.input:focus-visible,
+.input:focus-within,
+.input:active {
+    outline: 2px solid #aaa;
+}
+
+.input::placeholder {
+    color: #aaa;
+}

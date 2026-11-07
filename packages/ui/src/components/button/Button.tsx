@@ -15,6 +15,8 @@ export interface ButtonProps {
   onClick?: () => void;
   /** CSS-стили */
   style?: React.CSSProperties;
+  /** Тип (обычная или для отправки форм) */
+  type?: "button" | "submit"
   /** Состояние */
   disabled?: boolean
 }
@@ -23,6 +25,7 @@ export interface ButtonProps {
 export const Button = ({
   kind,
   icon,
+  type = "button",
   size = 'default',
   label,
   disabled = false,
@@ -37,9 +40,9 @@ export const Button = ({
 
   return (
     <button
-      type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       style={style}
+      type={type}
       disabled={disabled}
       onClick={onClick}
     >

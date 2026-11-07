@@ -1,0 +1,7 @@
+.post {
+    box-sizing: border-box;
+    width: min(90vw, 470px);
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    padding: 16px 20px;
+}

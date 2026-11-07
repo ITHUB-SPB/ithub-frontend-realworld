@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
 
-import Post from '../components/post/Post';
+import Post from '../components/post';
 
 const meta = {
   title: 'UI/Post',
