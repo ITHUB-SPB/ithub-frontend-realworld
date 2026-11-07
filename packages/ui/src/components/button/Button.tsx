@@ -26,12 +26,13 @@ export const Button = ({
   size = 'default',
   label,
   disabled = false,
+  onClick,
   style = {}
 }: ButtonProps) => {
   const mode = kind === "primary"
     ? 'storybook-button--primary'
-    : kind === "outlined" 
-      ? 'storybook-button--outlined' 
+    : kind === "outlined"
+      ? 'storybook-button--outlined'
       : 'storybook-button--danger';
 
   return (
@@ -40,6 +41,7 @@ export const Button = ({
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       style={style}
       disabled={disabled}
+      onClick={onClick}
     >
       {label}
     </button>

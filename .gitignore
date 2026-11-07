@@ -83,3 +83,7 @@ venv/
 dmypy.json
 
 .idea
+
+# storybook
+*storybook.log
+storybook-static
